@@ -1,5 +1,7 @@
 # Convert Wii Nunchunk to USB Joystick without soldering
 
+![Photo of nunchuck connected to adapter and QT Py ESP32-S3](./images/USBnunchuck.jpg)
+
 ## Hardware
 
 * Adafruit QT Py ESP32-S3 with STEMMA QT, no PSRAM
