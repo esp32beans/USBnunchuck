@@ -4,6 +4,8 @@
 
 ## Hardware
 
+This project uses the same hardware as https://github.com/esp32beans/USBnunchuck_mouse.
+
 * Adafruit QT Py ESP32-S3 with STEMMA QT, no PSRAM
 * Adafruit STEMMA QT/Qwiic JST SH 4-pin cable
 * Adafruit Wii Nunchuck Breakout Adapter - Qwiic/STEMMA QT
