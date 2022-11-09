@@ -115,7 +115,7 @@ class Joystick:
         """Send a report with all the existing settings.
         If ``always`` is ``False`` (the default), send only if there have been changes.
         """
-        struct.pack_into('Bbb', self._report, 0,
+        struct.pack_into('BBB', self._report, 0,
                 self._buttons_state,
                 self._joy_x,
                 self._joy_y
@@ -134,7 +134,6 @@ class Joystick:
 
     @staticmethod
     def _validate_joystick_value(value):
-        if not -127 <= value <= 127:
-            raise ValueError("Joystick value must be in range -127 to 127")
+        if not 0 <= value <= 255:
+            raise ValueError("Joystick value must be in range 0 to 255")
         return value
-

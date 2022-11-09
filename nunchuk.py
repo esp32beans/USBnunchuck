@@ -7,7 +7,6 @@ See boot.py for the creation of the USB HID joystick object.
 See hid_joystick.py for the Joystick class.
 """
 
-import time
 import board
 import adafruit_nunchuk
 import usb_hid
@@ -22,12 +21,7 @@ nc = adafruit_nunchuk.Nunchuk(board.STEMMA_I2C())
 
 while True:
     x, y = nc.joystick
-    if x == 255:
-        x = 254
-    x = x - 127
-    if y == 255:
-        y = 254
-    y = -(y - 127)
+    y = 255 - y
     js.move_joysticks(x, y)
 
     if nc.buttons.Z:
