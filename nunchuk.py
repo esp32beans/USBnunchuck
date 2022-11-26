@@ -8,6 +8,7 @@ See hid_joystick.py for the Joystick class.
 """
 
 import board
+import busio
 import adafruit_nunchuk
 import usb_hid
 
@@ -15,9 +16,16 @@ from hid_joystick import Joystick
 
 js = Joystick(usb_hid.devices)
 
-# For QT Py ESP32-S3 no PSRAM when using the STEMMA connector.
-# This should work for other boards with STEMMA connectors.
-nc = adafruit_nunchuk.Nunchuk(board.STEMMA_I2C())
+# This should work for all boards with STEMMA connectors.
+i2c = board.STEMMA_I2C()
+
+if board.board_id in ('adafruit_qt2040_trinkey', 'adafruit_qtpy_rp2040',
+        'adafruit_feather_rp2040'):
+    i2c.try_lock()
+    i2c.scan()
+    i2c.unlock()
+
+nc = adafruit_nunchuk.Nunchuk(i2c)
 
 while True:
     x, y = nc.joystick
