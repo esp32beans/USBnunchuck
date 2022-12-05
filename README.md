@@ -1,6 +1,7 @@
 # Convert Wii Nunchunk to USB Joystick without soldering
 
 ![Photo of nunchuck connected to adapter and QT Py ESP32-S3](./images/USBnunchuck.jpg)
+![Photo of Xbox Adaptive Controller with nunchuck connected to QT Py 2040 and 4 arcade buttons](./images/xac_nunchuck_4buttons.jpg)
 
 ## Hardware
 
@@ -29,6 +30,14 @@ Trinkey QT2040 --STEMMA-- Nunchuck adapter -- Nunchuck controller
 Feather RP2040 --STEMMA-- Nunchuck adapter -- Nunchuck controller
 ```
 
+Add four 30mm arcade buttons so the joystick has a total of six buttons. Still no
+soldering. The arcade button board is sold without the buttons and cables.
+
+* Adafruit LED Arcade Button 1x4 - STEMMA QT I2C Breakout - STEMMA QT / Qwiic
+* Adafruit STEMMA QT/Qwiic JST SH 4-pin cable
+* 4 X Arcade Button with LED - 30mm
+* Arcade Button Quick-Connect Wire Pairs - 0.11" (10 pack)
+
 ## Tutorials
 
 Recommended only if you want to change the Python code. Or if you are new to
@@ -42,6 +51,10 @@ CircuitPython on the respective boards.
 * [Customizing USB Devices in CircuitPython](https://learn.adafruit.com/customizing-usb-devices-in-circuitpython/hid-devices)
 * [Adafruit Wii Nunchuck Breakout Adapter](https://learn.adafruit.com/adafruit-wii-nunchuck-breakout-adapter)
 
+This guide is for the arcade button board.
+
+* [Adafruit LED Arcade Button 1x4 STEMMA QT](https://learn.adafruit.com/adafruit-led-arcade-button-qt)
+
 ## CircuitPython files
 
 code.py is a renamed copy of nunchuk.py.
@@ -49,26 +62,46 @@ code.py is a renamed copy of nunchuk.py.
 CircuitPython files and directories
 
 ```
-└── CIRCUITPY
-    ├── boot_out.txt
-    ├── boot.py
-    ├── code.py
-    ├── hid_joystick.py
-    └── lib
-        ├── adafruit_bus_device
-        │   ├── i2c_device.mpy
-        │   ├── __init__.py
-        │   └── spi_device.mpy
-        ├── adafruit_hid
-        │   ├── consumer_control_code.mpy
-        │   ├── consumer_control.mpy
-        │   ├── __init__.mpy
-        │   ├── keyboard_layout_base.mpy
-        │   ├── keyboard_layout_us.mpy
-        │   ├── keyboard.mpy
-        │   ├── keycode.mpy
-        │   └── mouse.mpy
-        └── adafruit_nunchuk.mpy
+CIRCUITPY/
+├── boot_out.txt
+├── boot.py
+├── code.py
+├── hid_joystick.py
+└── lib
+    ├── adafruit_bus_device
+    │   ├── i2c_device.mpy
+    │   ├── __init__.py
+    │   └── spi_device.mpy
+    ├── adafruit_hid
+    │   ├── consumer_control_code.mpy
+    │   ├── consumer_control.mpy
+    │   ├── __init__.mpy
+    │   ├── keyboard_layout_base.mpy
+    │   ├── keyboard_layout_us.mpy
+    │   ├── keyboard.mpy
+    │   ├── keycode.mpy
+    │   └── mouse.mpy
+    ├── adafruit_motor
+    │   ├── __init__.mpy
+    │   ├── motor.mpy
+    │   ├── servo.mpy
+    │   └── stepper.mpy
+    ├── adafruit_nunchuk.mpy
+    ├── adafruit_pixelbuf.mpy
+    └── adafruit_seesaw
+        ├── analoginput.mpy
+        ├── attiny8x7.mpy
+        ├── crickit.mpy
+        ├── digitalio.mpy
+        ├── __init__.py
+        ├── keypad.mpy
+        ├── neopixel.mpy
+        ├── pwmout.mpy
+        ├── robohat.mpy
+        ├── rotaryio.mpy
+        ├── samd09.mpy
+        ├── seesaw.mpy
+        └── tftshield18.mpy
 ```
 
 ## Testing
