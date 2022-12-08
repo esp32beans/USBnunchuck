@@ -19,9 +19,13 @@ This project uses the same hardware as https://github.com/esp32beans/USBnunchuck
 Plug the boards together as shown below. No soldering is needed.
 
 Only one of the QT Py, Trinkey, and Feather boards is needed. The Trinkey is
-the cheapest. The ESP32-S3 includes WiFi and Bluetooth Low Energy which are
-not currently used but might be in the future. The RP2040 boards do not have
-WiFi or Bluetooth so are cheaper and use much less power.
+the cheapest. The RP2040 boards do not have WiFi or Bluetooth so are cheaper
+and use much less power.
+
+The ESP32-S3 includes WiFi and Bluetooth Low Energy which are not currently
+used but might be in the future. The ESP32-S3 requires powering the XAC using a
+wall adapter because the ESP32 uses much more current than the other boards.
+The arcade buttons currently do not work on this board.
 
 ```
 ESP32-S3 --STEMMA-- Nunchuck adapter -- Nunchuck controller
