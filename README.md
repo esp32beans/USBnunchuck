@@ -85,13 +85,7 @@ CIRCUITPY/
     │   ├── keyboard.mpy
     │   ├── keycode.mpy
     │   └── mouse.mpy
-    ├── adafruit_motor
-    │   ├── __init__.mpy
-    │   ├── motor.mpy
-    │   ├── servo.mpy
-    │   └── stepper.mpy
     ├── adafruit_nunchuk.mpy
-    ├── adafruit_pixelbuf.mpy
     └── adafruit_seesaw
         ├── analoginput.mpy
         ├── attiny8x7.mpy
