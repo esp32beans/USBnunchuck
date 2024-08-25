@@ -105,13 +105,14 @@ CIRCUITPY/
 
 ## Two Stick example
 
+```
 ├── two_stick
 │   ├── boot.py
 │   ├── cp_xac_joystick.py
 │   ├── hid_joystick.py
 │   ├── LICENSE
 │   ├── README.md
-
+```
 
 The two_stick example can control both Xbox Adaptive Controller joysticks using
 one nunchuk.
@@ -119,7 +120,7 @@ one nunchuk.
 The two_stick example uses the same CP libs and hardware but presents the USB
 joystick with X axis, Y axis, an 8 way directional pad (dpad), and two buttons.
 
-The Windows joystick control panel shows the nunchuk thumbstick controls the
+The Windows joystick control panel shows the nunchuk thumb stick controls the
 USB joystick X and Y axes as before. Tilting the nunchuk controls the USB
 joystick dpad. This means means one nunchuk can control the X, Y, dpad, and two
 buttons.
