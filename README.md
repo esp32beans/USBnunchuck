@@ -89,6 +89,7 @@ CIRCUITPY/
     └── adafruit_seesaw
         ├── analoginput.mpy
         ├── attiny8x7.mpy
+        ├── attinyx16.mpy
         ├── crickit.mpy
         ├── digitalio.mpy
         ├── __init__.py
@@ -102,6 +103,41 @@ CIRCUITPY/
         └── tftshield18.mpy
 ```
 
-## Testing
+## Two Stick example
+
+├── two_stick
+│   ├── boot.py
+│   ├── cp_xac_joystick.py
+│   ├── hid_joystick.py
+│   ├── LICENSE
+│   ├── README.md
+
+
+The two_stick example can control both Xbox Adaptive Controller joysticks using
+one nunchuk.
+
+The two_stick example uses the same CP libs and hardware but presents the USB
+joystick with X axis, Y axis, an 8 way directional pad (dpad), and two buttons.
+
+The Windows joystick control panel shows the nunchuk thumbstick controls the
+USB joystick X and Y axes as before. Tilting the nunchuk controls the USB
+joystick dpad. This means means one nunchuk can control the X, Y, dpad, and two
+buttons.
+
+When plugged into an Xbox Adaptive Controller (XAC), the dpad can be mapped to
+either the XAC left or right joystick. The result is one nunchuk can control
+both the XAC left and right joysticks. This requires the XAC run the firmware
+released in June 2024 or newer. The latest XAC firmware can be installed using
+the Xbox Accessory app on an Xbox console or a Windows PC.
+
+The following explains how to map the XAC dpad buttons to the XAC right
+joystick.
+
+https://github.com/touchgadget/xac_onehand_controller
+
+## Testing as of Aug 24, 2024
 
 Works on XBox Adaptive Controller.
+
+Tested using CircuitPython 9.1.2. Files in lib/ directory from
+adafruit-circuitpython-bundle-9.x-mpy-20240822.zip
