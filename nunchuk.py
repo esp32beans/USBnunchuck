@@ -1,4 +1,4 @@
-# SPDX-FileCopyrightText: Copyright (c) 2022 esp32beans@gmail.com
+# SPDX-FileCopyrightText: Copyright (c) 2022, 2024 esp32beans@gmail.com
 #
 # SPDX-License-Identifier: MIT
 
@@ -28,12 +28,6 @@ while True:
 # This should work for all boards with STEMMA connectors.
 board.STEMMA_I2C().unlock()
 i2c = board.STEMMA_I2C()
-
-if board.board_id in ('adafruit_qt2040_trinkey', 'adafruit_qtpy_rp2040',
-        'adafruit_feather_rp2040', 'adafruit_qtpy_esp32s3_nopsram'):
-    i2c.try_lock()
-    i2c.scan()
-    i2c.unlock()
 
 nc = adafruit_nunchuk.Nunchuk(i2c)
 
