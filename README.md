@@ -114,11 +114,12 @@ CIRCUITPY/
 │   ├── README.md
 ```
 
-The two_stick example can control both Xbox Adaptive Controller joysticks using
-one nunchuk.
+The two_stick example controls both Xbox Adaptive Controller joysticks
+using one nunchuk.
 
-The two_stick example uses the same CP libs and hardware but presents the USB
-joystick with X axis, Y axis, an 8 way directional pad (dpad), and two buttons.
+The two_stick example uses the same CP libs and hardware but presents the
+USB joystick with X axis, Y axis, an 8 way directional pad (dpad), and
+two buttons.
 
 The Windows joystick control panel shows the nunchuk thumb stick controls the
 USB joystick X and Y axes as before. Tilting the nunchuk controls the USB
@@ -135,6 +136,34 @@ The following explains how to map the XAC dpad buttons to the XAC right
 joystick.
 
 https://github.com/touchgadget/xac_onehand_controller
+
+## Two Stick Alt example
+
+```
+├── two_stick_alt
+│   ├── boot.py
+│   ├── cp_xac_joystick.py
+│   ├── hid_joystick.py
+│   ├── LICENSE
+│   ├── README.md
+```
+
+The two_stick_alt example controls both Xbox Adaptive Controller joysticks
+using one nunchuk. This version does not use the XAC direction pad so does not
+require mapping the XAC dpad to an XAC joystick.
+
+The two_stick_alt example uses the same CP libs and hardware but presents
+the USB joystick with X axis, Y axis, X2 axis, Y2 axis, and two buttons.
+
+The Windows joystick control panel shows the nunchuk thumb stick controls
+the USB joystick X and Y axes as before. Tilting the nunchuk controls the
+other/second USB joystick. This means means one nunchuk can control two
+joysticks and 2 buttons without using the Xbox Accessory app.
+
+The nunchuk accelerometer used to detect tilting is not as precise as the
+thumb joystick so use the Xbox Accesory app to calibrate both joysticks.
+The Xbox Accessory app can also change the joystick sensitivity so it can
+be fine tuned to your style of play.
 
 ## Testing as of Aug 24, 2024
 
